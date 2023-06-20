@@ -24,7 +24,6 @@ Public Class SimpleCard
     Private back As List(Of String)
 
     Public Sub New(titel As String, back As List(Of String))
-        MyBase.New()
         Me.titel = titel
         Me.back = back
     End Sub
@@ -69,7 +68,6 @@ Public Class QuestionCard
     Private back As List(Of String)
 
     Public Sub New(titel As String, front As List(Of String), back As List(Of String))
-        MyBase.New()
         Me.titel = titel
         Me.front = front
         Me.back = back
@@ -121,7 +119,6 @@ Public Class SingleChoiceCard
     Private correctAnswer As Integer
 
     Public Sub New(titel As String, front As List(Of String), back As List(Of String), choices As List(Of String), nums As List(Of Integer), correctAnswer As Integer)
-        MyBase.New()
         Me.titel = titel
         Me.front = front
         Me.back = back
