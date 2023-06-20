@@ -22,16 +22,32 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        WebView21 = New Microsoft.Web.WebView2.WinForms.WebView2()
+        CType(WebView21, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
+        ' 
+        ' WebView21
+        ' 
+        WebView21.AllowExternalDrop = True
+        WebView21.CreationProperties = Nothing
+        WebView21.DefaultBackgroundColor = Color.White
+        WebView21.Location = New Point(180, 87)
+        WebView21.Name = "WebView21"
+        WebView21.Size = New Size(423, 254)
+        WebView21.TabIndex = 0
+        WebView21.ZoomFactor = 1R
         ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
+        Controls.Add(WebView21)
         Name = "Form1"
         Text = "Form1"
+        CType(WebView21, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
+    Friend WithEvents WebView21 As Microsoft.Web.WebView2.WinForms.WebView2
 End Class
