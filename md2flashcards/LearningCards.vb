@@ -49,7 +49,7 @@ Public Class SimpleCard
 
     Public Overrides Sub printToConsole()
         For Each line As String In getContent()
-            Console.WriteLine(line)
+            Debug.WriteLine(line)
         Next
     End Sub
 
@@ -94,7 +94,7 @@ Public Class QuestionCard
 
     Public Overrides Sub printToConsole()
         For Each line As String In getContent()
-            Console.WriteLine(line)
+            Debug.WriteLine(line)
         Next
     End Sub
 
@@ -132,7 +132,7 @@ Public Class SingleChoiceCard
         front.AddRange(Me.front)
         Dim i = 0
         Do While (i < choices.Count)
-            front.Add((numbers(i) + (". " + choices(i))))
+            front.Add((numbers(i) & (". " + choices(i))))
             i = (i + 1)
         Loop
 
@@ -158,7 +158,7 @@ Public Class SingleChoiceCard
 
     Public Overrides Sub printToConsole()
         For Each line As String In getContent()
-            Console.WriteLine(line)
+            Debug.WriteLine(line)
         Next
     End Sub
 
