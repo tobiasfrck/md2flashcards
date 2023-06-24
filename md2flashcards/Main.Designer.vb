@@ -32,6 +32,8 @@ Partial Class Form1
         Button5 = New Button()
         opnFileDiag = New OpenFileDialog()
         savFileDiag = New SaveFileDialog()
+        relMDAndAply = New Button()
+        opnHTMLDialog = New OpenFileDialog()
         SuspendLayout()
         ' 
         ' btnLoadMD
@@ -41,7 +43,7 @@ Partial Class Form1
         btnLoadMD.Location = New Point(10, 30)
         btnLoadMD.Margin = New Padding(2)
         btnLoadMD.Name = "btnLoadMD"
-        btnLoadMD.Size = New Size(246, 28)
+        btnLoadMD.Size = New Size(322, 28)
         btnLoadMD.TabIndex = 0
         btnLoadMD.Text = "Open Markdown-File"
         btnLoadMD.UseVisualStyleBackColor = True
@@ -72,7 +74,7 @@ Partial Class Form1
         btnSaveHTML.Location = New Point(10, 91)
         btnSaveHTML.Margin = New Padding(2)
         btnSaveHTML.Name = "btnSaveHTML"
-        btnSaveHTML.Size = New Size(246, 27)
+        btnSaveHTML.Size = New Size(322, 27)
         btnSaveHTML.TabIndex = 3
         btnSaveHTML.Text = "Save HTML-Flashcards"
         btnSaveHTML.UseVisualStyleBackColor = True
@@ -83,7 +85,7 @@ Partial Class Form1
         btnAplySettings.Location = New Point(10, 170)
         btnAplySettings.Margin = New Padding(2)
         btnAplySettings.Name = "btnAplySettings"
-        btnAplySettings.Size = New Size(246, 27)
+        btnAplySettings.Size = New Size(322, 27)
         btnAplySettings.TabIndex = 5
         btnAplySettings.Text = "Apply Settings"
         btnAplySettings.UseVisualStyleBackColor = True
@@ -105,7 +107,7 @@ Partial Class Form1
         Button4.Location = New Point(10, 222)
         Button4.Margin = New Padding(2)
         Button4.Name = "Button4"
-        Button4.Size = New Size(246, 28)
+        Button4.Size = New Size(322, 28)
         Button4.TabIndex = 6
         Button4.Text = "Single Player - Learning"
         Button4.UseVisualStyleBackColor = True
@@ -117,7 +119,7 @@ Partial Class Form1
         Button5.Location = New Point(10, 255)
         Button5.Margin = New Padding(2)
         Button5.Name = "Button5"
-        Button5.Size = New Size(246, 28)
+        Button5.Size = New Size(322, 28)
         Button5.TabIndex = 6
         Button5.Text = "COOP - Learning"
         Button5.UseVisualStyleBackColor = True
@@ -131,14 +133,31 @@ Partial Class Form1
         savFileDiag.Filter = "HTML-Files|*.html|All Files|*.*"
         savFileDiag.RestoreDirectory = True
         ' 
+        ' relMDAndAply
+        ' 
+        relMDAndAply.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
+        relMDAndAply.Location = New Point(11, 139)
+        relMDAndAply.Margin = New Padding(2)
+        relMDAndAply.Name = "relMDAndAply"
+        relMDAndAply.Size = New Size(322, 27)
+        relMDAndAply.TabIndex = 5
+        relMDAndAply.Text = "Reload MD and Apply Settings"
+        relMDAndAply.UseVisualStyleBackColor = True
+        ' 
+        ' opnHTMLDialog
+        ' 
+        opnHTMLDialog.FileName = "OpenFileDialog1"
+        opnHTMLDialog.Filter = "HTML-Files|*.html|All Files|*.*"
+        ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(265, 450)
+        ClientSize = New Size(341, 450)
         Controls.Add(Label3)
         Controls.Add(Button5)
         Controls.Add(Button4)
+        Controls.Add(relMDAndAply)
         Controls.Add(btnAplySettings)
         Controls.Add(btnSaveHTML)
         Controls.Add(Label2)
@@ -161,4 +180,6 @@ Partial Class Form1
     Friend WithEvents Button5 As Button
     Friend WithEvents opnFileDiag As OpenFileDialog
     Friend WithEvents savFileDiag As SaveFileDialog
+    Friend WithEvents relMDAndAply As Button
+    Friend WithEvents opnHTMLDialog As OpenFileDialog
 End Class
