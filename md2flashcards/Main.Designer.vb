@@ -28,12 +28,15 @@ Partial Class Form1
         btnSaveHTML = New Button()
         btnAplySettings = New Button()
         Label3 = New Label()
-        Button4 = New Button()
+        btnSinglePlayer = New Button()
         Button5 = New Button()
         opnFileDiag = New OpenFileDialog()
         savFileDiag = New SaveFileDialog()
-        relMDAndAply = New Button()
+        btnRelMDAndAply = New Button()
         opnHTMLDialog = New OpenFileDialog()
+        linkColorBox = New PictureBox()
+        ColorDialog1 = New ColorDialog()
+        CType(linkColorBox, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' btnLoadMD
@@ -82,7 +85,7 @@ Partial Class Form1
         ' btnAplySettings
         ' 
         btnAplySettings.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
-        btnAplySettings.Location = New Point(10, 170)
+        btnAplySettings.Location = New Point(10, 210)
         btnAplySettings.Margin = New Padding(2)
         btnAplySettings.Name = "btnAplySettings"
         btnAplySettings.Size = New Size(322, 27)
@@ -93,30 +96,30 @@ Partial Class Form1
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(10, 200)
+        Label3.Location = New Point(10, 240)
         Label3.Margin = New Padding(2, 0, 2, 0)
         Label3.Name = "Label3"
         Label3.Size = New Size(66, 20)
         Label3.TabIndex = 7
         Label3.Text = "Learning"
         ' 
-        ' Button4
+        ' btnSinglePlayer
         ' 
-        Button4.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
-        Button4.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        Button4.Location = New Point(10, 222)
-        Button4.Margin = New Padding(2)
-        Button4.Name = "Button4"
-        Button4.Size = New Size(322, 28)
-        Button4.TabIndex = 6
-        Button4.Text = "Single Player - Learning"
-        Button4.UseVisualStyleBackColor = True
+        btnSinglePlayer.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
+        btnSinglePlayer.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        btnSinglePlayer.Location = New Point(10, 262)
+        btnSinglePlayer.Margin = New Padding(2)
+        btnSinglePlayer.Name = "btnSinglePlayer"
+        btnSinglePlayer.Size = New Size(322, 28)
+        btnSinglePlayer.TabIndex = 6
+        btnSinglePlayer.Text = "Single Player - Learning"
+        btnSinglePlayer.UseVisualStyleBackColor = True
         ' 
         ' Button5
         ' 
         Button5.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         Button5.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        Button5.Location = New Point(10, 255)
+        Button5.Location = New Point(10, 295)
         Button5.Margin = New Padding(2)
         Button5.Name = "Button5"
         Button5.Size = New Size(322, 28)
@@ -133,31 +136,44 @@ Partial Class Form1
         savFileDiag.Filter = "HTML-Files|*.html|All Files|*.*"
         savFileDiag.RestoreDirectory = True
         ' 
-        ' relMDAndAply
+        ' btnRelMDAndAply
         ' 
-        relMDAndAply.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
-        relMDAndAply.Location = New Point(11, 139)
-        relMDAndAply.Margin = New Padding(2)
-        relMDAndAply.Name = "relMDAndAply"
-        relMDAndAply.Size = New Size(322, 27)
-        relMDAndAply.TabIndex = 5
-        relMDAndAply.Text = "Reload MD and Apply Settings"
-        relMDAndAply.UseVisualStyleBackColor = True
+        btnRelMDAndAply.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
+        btnRelMDAndAply.Location = New Point(11, 179)
+        btnRelMDAndAply.Margin = New Padding(2)
+        btnRelMDAndAply.Name = "btnRelMDAndAply"
+        btnRelMDAndAply.Size = New Size(322, 27)
+        btnRelMDAndAply.TabIndex = 5
+        btnRelMDAndAply.Text = "Reload MD and Apply Settings"
+        btnRelMDAndAply.UseVisualStyleBackColor = True
         ' 
         ' opnHTMLDialog
         ' 
         opnHTMLDialog.FileName = "OpenFileDialog1"
         opnHTMLDialog.Filter = "HTML-Files|*.html|All Files|*.*"
         ' 
+        ' linkColorBox
+        ' 
+        linkColorBox.Location = New Point(12, 143)
+        linkColorBox.Name = "linkColorBox"
+        linkColorBox.Size = New Size(317, 21)
+        linkColorBox.TabIndex = 8
+        linkColorBox.TabStop = False
+        ' 
+        ' ColorDialog1
+        ' 
+        ColorDialog1.AnyColor = True
+        ' 
         ' Form1
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(341, 450)
+        Controls.Add(linkColorBox)
         Controls.Add(Label3)
         Controls.Add(Button5)
-        Controls.Add(Button4)
-        Controls.Add(relMDAndAply)
+        Controls.Add(btnSinglePlayer)
+        Controls.Add(btnRelMDAndAply)
         Controls.Add(btnAplySettings)
         Controls.Add(btnSaveHTML)
         Controls.Add(Label2)
@@ -166,6 +182,7 @@ Partial Class Form1
         Margin = New Padding(3, 2, 3, 2)
         Name = "Form1"
         Text = "md2flashcards"
+        CType(linkColorBox, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -176,10 +193,12 @@ Partial Class Form1
     Friend WithEvents btnSaveHTML As Button
     Friend WithEvents btnAplySettings As Button
     Friend WithEvents Label3 As Label
-    Friend WithEvents Button4 As Button
+    Friend WithEvents btnSinglePlayer As Button
     Friend WithEvents Button5 As Button
     Friend WithEvents opnFileDiag As OpenFileDialog
     Friend WithEvents savFileDiag As SaveFileDialog
-    Friend WithEvents relMDAndAply As Button
+    Friend WithEvents btnRelMDAndAply As Button
     Friend WithEvents opnHTMLDialog As OpenFileDialog
+    Friend WithEvents linkColorBox As PictureBox
+    Friend WithEvents ColorDialog1 As ColorDialog
 End Class

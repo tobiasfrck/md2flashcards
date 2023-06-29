@@ -21,6 +21,7 @@ Public Class Form1
         mdFilePath = opnFileDiag.FileName
         btnSaveHTML.Enabled = True
         btnAplySettings.Enabled = True
+        btnRelMDAndAply.Enabled = True
         cardDeck = New List(Of LearningCard)()
         cardDeck = loader.loadCardFile(mdFilePath)
         For Each card As LearningCard In cardDeck
@@ -32,6 +33,7 @@ Public Class Form1
         If mdFilePath Is Nothing Then
             btnSaveHTML.Enabled = False
             btnAplySettings.Enabled = False
+            btnRelMDAndAply.Enabled = False
         End If
     End Sub
 
@@ -44,13 +46,13 @@ Public Class Form1
         htmlGenerator.createHTMLCards(cardDeck, saveFilePath)
     End Sub
 
-    Private Sub relMDAndAply_Click(sender As Object, e As EventArgs) Handles relMDAndAply.Click
+    Private Sub relMDAndAply_Click(sender As Object, e As EventArgs) Handles btnRelMDAndAply.Click
         cardDeck = New List(Of LearningCard)()
         cardDeck = loader.loadCardFile(mdFilePath)
         htmlGenerator.createHTMLCards(cardDeck, saveFilePath)
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles btnSinglePlayer.Click
         If (saveFilePath Is Nothing) Then
             opnHTMLDialog.ShowDialog()
         Else
@@ -69,4 +71,11 @@ Public Class Form1
         SingleViewer.Show()
         SingleViewer.BringToFront()
     End Sub
+
+    Private Sub linkColorBox_Click(sender As Object, e As EventArgs) Handles linkColorBox.Click
+        ColorDialog1.ShowDialog()
+        linkColorBox.BackColor = ColorDialog1.Color
+    End Sub
+
+
 End Class
