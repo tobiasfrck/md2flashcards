@@ -39,7 +39,11 @@ Public Class Form1
 
     Private Sub savFileDiag_FileOk(sender As Object, e As CancelEventArgs) Handles savFileDiag.FileOk
         saveFilePath = savFileDiag.FileName
-        htmlGenerator.createHTMLCards(cardDeck, saveFilePath)
+        If (saveFilePath.EndsWith(".html")) Then
+            saveFilePath = saveFilePath.Substring(0, saveFilePath.Length - 5)
+        End If
+        htmlGenerator.createHTMLCardsWithNoAnswer(cardDeck, saveFilePath & "_noanswers.html")
+        htmlGenerator.createHTMLCards(cardDeck, saveFilePath & ".html")
     End Sub
 
     Private Sub btnAplySettings_Click(sender As Object, e As EventArgs) Handles btnAplySettings.Click
@@ -77,5 +81,7 @@ Public Class Form1
         linkColorBox.BackColor = ColorDialog1.Color
     End Sub
 
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
 
+    End Sub
 End Class

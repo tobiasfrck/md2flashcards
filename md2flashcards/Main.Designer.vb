@@ -43,10 +43,10 @@ Partial Class Form1
         ' 
         btnLoadMD.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         btnLoadMD.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        btnLoadMD.Location = New Point(10, 30)
+        btnLoadMD.Location = New Point(12, 38)
         btnLoadMD.Margin = New Padding(2)
         btnLoadMD.Name = "btnLoadMD"
-        btnLoadMD.Size = New Size(322, 28)
+        btnLoadMD.Size = New Size(402, 35)
         btnLoadMD.TabIndex = 0
         btnLoadMD.Text = "Open Markdown-File"
         btnLoadMD.UseVisualStyleBackColor = True
@@ -54,30 +54,30 @@ Partial Class Form1
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(10, 7)
+        Label1.Location = New Point(12, 9)
         Label1.Margin = New Padding(2, 0, 2, 0)
         Label1.Name = "Label1"
-        Label1.Size = New Size(126, 20)
+        Label1.Size = New Size(153, 25)
         Label1.TabIndex = 1
         Label1.Text = "Markdown - Load"
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(10, 69)
+        Label2.Location = New Point(12, 86)
         Label2.Margin = New Padding(2, 0, 2, 0)
         Label2.Name = "Label2"
-        Label2.Size = New Size(93, 20)
+        Label2.Size = New Size(112, 25)
         Label2.TabIndex = 2
         Label2.Text = "HTML - Save"
         ' 
         ' btnSaveHTML
         ' 
         btnSaveHTML.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
-        btnSaveHTML.Location = New Point(10, 91)
+        btnSaveHTML.Location = New Point(12, 114)
         btnSaveHTML.Margin = New Padding(2)
         btnSaveHTML.Name = "btnSaveHTML"
-        btnSaveHTML.Size = New Size(322, 27)
+        btnSaveHTML.Size = New Size(402, 34)
         btnSaveHTML.TabIndex = 3
         btnSaveHTML.Text = "Save HTML-Flashcards"
         btnSaveHTML.UseVisualStyleBackColor = True
@@ -85,10 +85,10 @@ Partial Class Form1
         ' btnAplySettings
         ' 
         btnAplySettings.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
-        btnAplySettings.Location = New Point(10, 210)
+        btnAplySettings.Location = New Point(12, 262)
         btnAplySettings.Margin = New Padding(2)
         btnAplySettings.Name = "btnAplySettings"
-        btnAplySettings.Size = New Size(322, 27)
+        btnAplySettings.Size = New Size(402, 34)
         btnAplySettings.TabIndex = 5
         btnAplySettings.Text = "Apply Settings"
         btnAplySettings.UseVisualStyleBackColor = True
@@ -96,10 +96,10 @@ Partial Class Form1
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(10, 240)
+        Label3.Location = New Point(12, 300)
         Label3.Margin = New Padding(2, 0, 2, 0)
         Label3.Name = "Label3"
-        Label3.Size = New Size(66, 20)
+        Label3.Size = New Size(79, 25)
         Label3.TabIndex = 7
         Label3.Text = "Learning"
         ' 
@@ -107,10 +107,10 @@ Partial Class Form1
         ' 
         btnSinglePlayer.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         btnSinglePlayer.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        btnSinglePlayer.Location = New Point(10, 262)
+        btnSinglePlayer.Location = New Point(12, 328)
         btnSinglePlayer.Margin = New Padding(2)
         btnSinglePlayer.Name = "btnSinglePlayer"
-        btnSinglePlayer.Size = New Size(322, 28)
+        btnSinglePlayer.Size = New Size(402, 35)
         btnSinglePlayer.TabIndex = 6
         btnSinglePlayer.Text = "Single Player - Learning"
         btnSinglePlayer.UseVisualStyleBackColor = True
@@ -119,10 +119,10 @@ Partial Class Form1
         ' 
         Button5.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         Button5.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        Button5.Location = New Point(10, 295)
+        Button5.Location = New Point(12, 369)
         Button5.Margin = New Padding(2)
         Button5.Name = "Button5"
-        Button5.Size = New Size(322, 28)
+        Button5.Size = New Size(402, 35)
         Button5.TabIndex = 6
         Button5.Text = "COOP - Learning"
         Button5.UseVisualStyleBackColor = True
@@ -139,10 +139,10 @@ Partial Class Form1
         ' btnRelMDAndAply
         ' 
         btnRelMDAndAply.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
-        btnRelMDAndAply.Location = New Point(11, 179)
+        btnRelMDAndAply.Location = New Point(14, 224)
         btnRelMDAndAply.Margin = New Padding(2)
         btnRelMDAndAply.Name = "btnRelMDAndAply"
-        btnRelMDAndAply.Size = New Size(322, 27)
+        btnRelMDAndAply.Size = New Size(402, 34)
         btnRelMDAndAply.TabIndex = 5
         btnRelMDAndAply.Text = "Reload MD and Apply Settings"
         btnRelMDAndAply.UseVisualStyleBackColor = True
@@ -154,9 +154,10 @@ Partial Class Form1
         ' 
         ' linkColorBox
         ' 
-        linkColorBox.Location = New Point(12, 143)
+        linkColorBox.Location = New Point(15, 179)
+        linkColorBox.Margin = New Padding(4, 4, 4, 4)
         linkColorBox.Name = "linkColorBox"
-        linkColorBox.Size = New Size(317, 21)
+        linkColorBox.Size = New Size(396, 26)
         linkColorBox.TabIndex = 8
         linkColorBox.TabStop = False
         ' 
@@ -166,9 +167,9 @@ Partial Class Form1
         ' 
         ' Form1
         ' 
-        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
+        AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(341, 450)
+        ClientSize = New Size(426, 562)
         Controls.Add(linkColorBox)
         Controls.Add(Label3)
         Controls.Add(Button5)
@@ -179,7 +180,7 @@ Partial Class Form1
         Controls.Add(Label2)
         Controls.Add(Label1)
         Controls.Add(btnLoadMD)
-        Margin = New Padding(3, 2, 3, 2)
+        Margin = New Padding(4, 2, 4, 2)
         Name = "Form1"
         Text = "md2flashcards"
         CType(linkColorBox, ComponentModel.ISupportInitialize).EndInit()
