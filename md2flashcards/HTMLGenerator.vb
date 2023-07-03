@@ -7,10 +7,11 @@ Public Class HTMLGenerator
         For Each card As LearningCard In cards
             html_cards.AddRange(card2HTML(card))
         Next
+        html_cards.AddRange(card2HTML(cards.Last()))
         html_cards.Add("<div class=" & Chr(34) & "revealfix" & Chr(34) & ">")
         html_cards.Add("<div class=" & Chr(34) & "revealfix" & Chr(34) & "><a onclick=" & Chr(34) & "revealAnswer()" & Chr(34) & " class=" & Chr(34) & "reveal" & Chr(34) & ">Reveal</a></div>")
-        html_cards.Add("</div></body>")
-        html_cards.Add("<script>    let slideIndex = 1;    let learnCards = document.getElementsByClassName('LearningCard');    let cards = document.getElementsByClassName('card');    let answers = document.getElementsByClassName('answer');    showSlides(slideIndex);    document.addEventListener('keydown', function (event) {        if (event.keyCode == 39) {            nextSlide();        }        if (event.keyCode == 37) {            previousSlide();        }    });    function changePrintLayout() {    }    function revealAnswer() {        let rev = document.getElementsByClassName('reveal')[0];        let ans = learnCards[slideIndex - 1].getElementsByClassName('answer')[0];        if (ans == undefined) {            console.log('No answer for card: ' + slideIndex);            return;        }        if (ans.style.display == 'none') {            ans.style.display = 'block';            rev.innerHTML = 'Hide';            rev.classList.add('hide');            rev.classList.remove('rev');            cards[slideIndex - 1].style.display = 'none';        } else {            ans.style.display = 'none';            rev.innerHTML = 'Reveal';            rev.classList.remove('hide');            rev.classList.add('rev');            cards[slideIndex - 1].style.display = 'block';        }    }    function nextSlide() {        showSlides(slideIndex += 1);    }    function previousSlide() {        showSlides(slideIndex -= 1);    }    function showSlides() {                let rev = document.getElementsByClassName('reveal')[0];        let revfix = document.getElementsByClassName('revealfix')[0];        if (slideIndex > cards.length) { slideIndex = 1 };        if (slideIndex < 1) { slideIndex = cards.length };        for (let answer of answers) {            answer.style.display = 'none';        }        for (let slide of cards) {            slide.style.display = 'none';        }        cards[slideIndex - 1].style.display = 'block';        let ans = learnCards[slideIndex - 1].getElementsByClassName('answer')[0];        if (ans == undefined) {            rev.style.display = 'none';            revfix.style.display = 'none';            learnCards[slideIndex - 1].classList.add('noanswer');        } else {            revfix.style.display = 'block';            rev.style.display = 'block';            rev.innerHTML = 'Reveal';            rev.classList.add('rev');        }    }</script>".Replace("'", Chr(34)))
+        html_cards.Add("</div></div></body>")
+        html_cards.Add("<script>    let slideIndex = 1;    let learnCards = document.getElementsByClassName('LearningCard');    let cards = document.getElementsByClassName('card');    let answers = document.getElementsByClassName('answer');    showSlides(slideIndex);    document.addEventListener('keydown', function (event) {        if (event.keyCode == 39) {            nextSlide();        }        if (event.keyCode == 37) {            previousSlide();        }    });    function changePrintLayout() {    }    function revealAnswer() {        let rev = document.getElementsByClassName('reveal')[0];        let ans = learnCards[slideIndex - 1].getElementsByClassName('answer')[0];        if (ans == undefined) {            console.log('No answer for card: ' + slideIndex);            return;        }        if (ans.style.display == 'none') {            ans.style.display = 'block';            rev.innerHTML = 'Hide';            rev.classList.add('hide');            rev.classList.remove('rev');            cards[slideIndex - 1].style.display = 'none';        } else {            ans.style.display = 'none';            rev.innerHTML = 'Reveal';            rev.classList.remove('hide');            rev.classList.add('rev');            cards[slideIndex - 1].style.display = 'block';        }    }    function nextSlide() {        showSlides(slideIndex += 1);    }    function previousSlide() {        showSlides(slideIndex -= 1);    }    function showSlides() {                let rev = document.getElementsByClassName('reveal')[0];        let revfix = document.getElementsByClassName('revealfix')[0];        if (slideIndex > cards.length - 1) { slideIndex = 1 };        if (slideIndex < 1) { slideIndex = cards.length - 1};        for (let answer of answers) {            answer.style.display = 'none';        }        for (let slide of cards) {            slide.style.display = 'none';        }        cards[slideIndex - 1].style.display = 'block';        let ans = learnCards[slideIndex - 1].getElementsByClassName('answer')[0];        if (ans == undefined) {            rev.style.display = 'none';            revfix.style.display = 'none';                    } else {            revfix.style.display = 'block';            rev.style.display = 'block';            rev.innerHTML = 'Reveal';            rev.classList.add('rev');        }    }</script>".Replace("'", Chr(34)))
         html_cards.Add("</html>")
         createFile(output_file, html_cards)
     End Sub
@@ -37,6 +38,22 @@ Public Class HTMLGenerator
         For Each line As String In card.getBackContent()
             Dim modLine = mdline2HTML(cleanIncompatible(line))
             output.Add("<p>" + modLine + "</p>")
+        Next
+
+        output.Add("</div></div></div>")
+        Return output
+    End Function
+
+    Private Function cardNOANSWER2HTML(card As LearningCard) As List(Of String)
+        Dim output As New List(Of String)
+        output.Add("<div class=" & Chr(34) & "LearningCard" & Chr(34) & ">")
+        output.Add("<div class=" & Chr(34) & "card" & Chr(34) & ">")
+        output.Add("<div class=" & Chr(34) & "titlefix" & Chr(34) & ">")
+        output.Add("<h1 class=" & Chr(34) & "titel" & Chr(34) & ">" & card.getTitel() & "</h1></div>")
+        output.Add("<div class=" & Chr(34) & "content" & Chr(34) & ">")
+        For Each line As String In card.getFrontContent()
+            Dim modline As String = mdline2HTML(cleanIncompatible(line))
+            output.Add("<p>" + modline + "</p>")
         Next
 
         output.Add("</div></div></div>")

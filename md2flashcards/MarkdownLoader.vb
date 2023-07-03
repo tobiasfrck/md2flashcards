@@ -45,7 +45,7 @@ Public Class MarkdownLoader
     End Function
     Private Function loadQuestionCard(lines As String(), c As List(Of LearningCard), index As Integer) As Integer
         'TODO: Check if substring values are correct
-        Dim title As String = lines(index).Substring(2, lines(index).Length - 10 - 2)
+        Dim title As String = lines(index).Substring(2, lines(index).Length - 10 - 3)
         Dim front As List(Of String) = New List(Of String)
         Dim back As List(Of String) = New List(Of String)
 
@@ -145,7 +145,8 @@ Public Class MarkdownLoader
         Return i
     End Function
 
-    Private Function identifyCardType(ByVal line As String) As Integer
+    Private Function identifyCardType(ByRef line As String) As Integer
+        line = cleanLine(line)
         If (line.StartsWith("# ")) Then
             If (line.EndsWith("{QUESTION}")) Then
                 Return 1
@@ -156,6 +157,12 @@ Public Class MarkdownLoader
             Return 0
         End If
         Return -1
+    End Function
+
+    Public Function cleanLine(line As String) As String
+        line = line.Trim()
+        line = line.Replace(vbCr, "")
+        Return line
     End Function
 
 End Class
