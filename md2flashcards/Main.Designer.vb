@@ -182,9 +182,9 @@ Partial Class Form1
         Label4.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
         Label4.Location = New Point(12, 404)
         Label4.Name = "Label4"
-        Label4.Size = New Size(287, 28)
+        Label4.Size = New Size(338, 28)
         Label4.TabIndex = 8
-        Label4.Text = "Tip: Use Arrow Keys to navigate"
+        Label4.Text = "Tip: Use Arrow Keys to navigate cards"
         ' 
         ' Form1
         ' 
