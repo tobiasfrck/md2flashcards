@@ -9,6 +9,8 @@ Public Class Form1
     Dim saveFilePath As String
     Dim onlyCardFilePath As String
 
+    Dim htmlWasSaved As Boolean = False
+
     Dim htmlGenerator As New HTMLGenerator
     Dim loader As New MarkdownLoader
     Dim cardDeck As List(Of LearningCard)
@@ -42,6 +44,8 @@ Public Class Form1
     Private Sub Form1_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
         If mdFilePath Is Nothing Then
             btnSaveHTML.Enabled = False
+        End If
+        If Not htmlWasSaved Then
             btnAplySettings.Enabled = False
             btnRelMDAndAply.Enabled = False
         End If
@@ -56,16 +60,33 @@ Public Class Form1
         onlyCardFilePath = saveFilePath & "_noanswers.html"
         htmlGenerator.createHTMLCards(cardDeck, saveFilePath & ".html")
         saveFilePath = saveFilePath & ".html"
+        htmlWasSaved = True
+        btnAplySettings.Enabled = True
+        btnRelMDAndAply.Enabled = True
     End Sub
 
     Private Sub btnAplySettings_Click(sender As Object, e As EventArgs) Handles btnAplySettings.Click
-        htmlGenerator.createHTMLCards(cardDeck, saveFilePath)
+        saveFilePath = savFileDiag.FileName
+        If (saveFilePath.EndsWith(".html")) Then
+            saveFilePath = saveFilePath.Substring(0, saveFilePath.Length - 5)
+        End If
+        htmlGenerator.createHTMLCardsWithNoAnswer(cardDeck, saveFilePath & "_noanswers.html")
+        onlyCardFilePath = saveFilePath & "_noanswers.html"
+        htmlGenerator.createHTMLCards(cardDeck, saveFilePath & ".html")
+        saveFilePath = saveFilePath & ".html"
     End Sub
 
     Private Sub relMDAndAply_Click(sender As Object, e As EventArgs) Handles btnRelMDAndAply.Click
         cardDeck = New List(Of LearningCard)()
         cardDeck = loader.loadCardFile(mdFilePath)
-        htmlGenerator.createHTMLCards(cardDeck, saveFilePath)
+        saveFilePath = savFileDiag.FileName
+        If (saveFilePath.EndsWith(".html")) Then
+            saveFilePath = saveFilePath.Substring(0, saveFilePath.Length - 5)
+        End If
+        htmlGenerator.createHTMLCardsWithNoAnswer(cardDeck, saveFilePath & "_noanswers.html")
+        onlyCardFilePath = saveFilePath & "_noanswers.html"
+        htmlGenerator.createHTMLCards(cardDeck, saveFilePath & ".html")
+        saveFilePath = saveFilePath & ".html"
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles btnSinglePlayer.Click
@@ -78,11 +99,7 @@ Public Class Form1
         SingleViewer.allowSourceChange = True
         SingleViewer.Show()
         SingleViewer.BringToFront()
-    End Sub
-
-    Private Sub linkColorBox_Click(sender As Object, e As EventArgs) Handles linkColorBox.Click
-        ColorDialog1.ShowDialog()
-        linkColorBox.BackColor = ColorDialog1.Color
+        SingleViewer.TopMost = True
     End Sub
 
     Private Sub btnCOOPPlayer_Click(sender As Object, e As EventArgs) Handles btnCOOPPlayer.Click

@@ -34,21 +34,21 @@ Partial Class Form1
         savFileDiag = New SaveFileDialog()
         btnRelMDAndAply = New Button()
         opnHTMLDialog = New OpenFileDialog()
-        linkColorBox = New PictureBox()
         ColorDialog1 = New ColorDialog()
         opnCoopFile = New OpenFileDialog()
         opnFullFile = New OpenFileDialog()
-        CType(linkColorBox, ComponentModel.ISupportInitialize).BeginInit()
+        Label4 = New Label()
         SuspendLayout()
         ' 
         ' btnLoadMD
         ' 
         btnLoadMD.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         btnLoadMD.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        btnLoadMD.Location = New Point(10, 30)
+        btnLoadMD.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        btnLoadMD.Location = New Point(11, 40)
         btnLoadMD.Margin = New Padding(2)
         btnLoadMD.Name = "btnLoadMD"
-        btnLoadMD.Size = New Size(322, 28)
+        btnLoadMD.Size = New Size(361, 49)
         btnLoadMD.TabIndex = 0
         btnLoadMD.Text = "Open Markdown-File"
         btnLoadMD.UseVisualStyleBackColor = True
@@ -56,77 +56,84 @@ Partial Class Form1
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(10, 7)
+        Label1.Font = New Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point)
+        Label1.Location = New Point(11, 7)
         Label1.Margin = New Padding(2, 0, 2, 0)
         Label1.Name = "Label1"
-        Label1.Size = New Size(126, 20)
+        Label1.Size = New Size(252, 31)
         Label1.TabIndex = 1
-        Label1.Text = "Markdown - Load"
+        Label1.Text = "Import from Markdown"
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(10, 69)
+        Label2.Font = New Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point)
+        Label2.Location = New Point(11, 91)
         Label2.Margin = New Padding(2, 0, 2, 0)
         Label2.Name = "Label2"
-        Label2.Size = New Size(93, 20)
+        Label2.Size = New Size(174, 31)
         Label2.TabIndex = 2
-        Label2.Text = "HTML - Save"
+        Label2.Text = "Export as HTML"
         ' 
         ' btnSaveHTML
         ' 
         btnSaveHTML.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
-        btnSaveHTML.Location = New Point(10, 91)
+        btnSaveHTML.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        btnSaveHTML.Location = New Point(11, 124)
         btnSaveHTML.Margin = New Padding(2)
         btnSaveHTML.Name = "btnSaveHTML"
-        btnSaveHTML.Size = New Size(322, 27)
+        btnSaveHTML.Size = New Size(361, 49)
         btnSaveHTML.TabIndex = 3
-        btnSaveHTML.Text = "Save HTML-Flashcards"
+        btnSaveHTML.Text = "Export HTML-Flashcards"
         btnSaveHTML.UseVisualStyleBackColor = True
         ' 
         ' btnAplySettings
         ' 
         btnAplySettings.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
-        btnAplySettings.Location = New Point(10, 210)
+        btnAplySettings.Font = New Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point)
+        btnAplySettings.Location = New Point(11, 223)
         btnAplySettings.Margin = New Padding(2)
         btnAplySettings.Name = "btnAplySettings"
-        btnAplySettings.Size = New Size(322, 27)
+        btnAplySettings.Size = New Size(361, 42)
         btnAplySettings.TabIndex = 5
-        btnAplySettings.Text = "Apply Settings"
+        btnAplySettings.Text = "Regenerate HTML-Flashcards"
         btnAplySettings.UseVisualStyleBackColor = True
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(10, 240)
+        Label3.Font = New Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point)
+        Label3.Location = New Point(11, 267)
         Label3.Margin = New Padding(2, 0, 2, 0)
         Label3.Name = "Label3"
-        Label3.Size = New Size(66, 20)
+        Label3.Size = New Size(151, 31)
         Label3.TabIndex = 7
-        Label3.Text = "Learning"
+        Label3.Text = "Start learning"
         ' 
         ' btnSinglePlayer
         ' 
         btnSinglePlayer.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         btnSinglePlayer.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        btnSinglePlayer.Location = New Point(10, 262)
+        btnSinglePlayer.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        btnSinglePlayer.Location = New Point(11, 300)
         btnSinglePlayer.Margin = New Padding(2)
         btnSinglePlayer.Name = "btnSinglePlayer"
-        btnSinglePlayer.Size = New Size(322, 28)
+        btnSinglePlayer.Size = New Size(361, 49)
         btnSinglePlayer.TabIndex = 6
-        btnSinglePlayer.Text = "Single Player - Learning"
+        btnSinglePlayer.Text = "Student Mode"
         btnSinglePlayer.UseVisualStyleBackColor = True
         ' 
         ' btnCOOPPlayer
         ' 
         btnCOOPPlayer.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         btnCOOPPlayer.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        btnCOOPPlayer.Location = New Point(12, 294)
+        btnCOOPPlayer.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        btnCOOPPlayer.Location = New Point(11, 353)
         btnCOOPPlayer.Margin = New Padding(2)
         btnCOOPPlayer.Name = "btnCOOPPlayer"
-        btnCOOPPlayer.Size = New Size(322, 28)
+        btnCOOPPlayer.Size = New Size(361, 49)
         btnCOOPPlayer.TabIndex = 6
-        btnCOOPPlayer.Text = "COOP - Learning"
+        btnCOOPPlayer.Text = "Teacher + Student Mode"
         btnCOOPPlayer.UseVisualStyleBackColor = True
         ' 
         ' opnFileDiag
@@ -143,26 +150,19 @@ Partial Class Form1
         ' btnRelMDAndAply
         ' 
         btnRelMDAndAply.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
-        btnRelMDAndAply.Location = New Point(11, 179)
+        btnRelMDAndAply.Font = New Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point)
+        btnRelMDAndAply.Location = New Point(11, 177)
         btnRelMDAndAply.Margin = New Padding(2)
         btnRelMDAndAply.Name = "btnRelMDAndAply"
-        btnRelMDAndAply.Size = New Size(322, 27)
+        btnRelMDAndAply.Size = New Size(361, 42)
         btnRelMDAndAply.TabIndex = 5
-        btnRelMDAndAply.Text = "Reload MD and Apply Settings"
+        btnRelMDAndAply.Text = "Reload Markdown and export HTML"
         btnRelMDAndAply.UseVisualStyleBackColor = True
         ' 
         ' opnHTMLDialog
         ' 
         opnHTMLDialog.Filter = "HTML-Files|*.html|All Files|*.*"
         opnHTMLDialog.Title = "Open HTML-Flashcards with answers"
-        ' 
-        ' linkColorBox
-        ' 
-        linkColorBox.Location = New Point(12, 143)
-        linkColorBox.Name = "linkColorBox"
-        linkColorBox.Size = New Size(317, 21)
-        linkColorBox.TabIndex = 8
-        linkColorBox.TabStop = False
         ' 
         ' ColorDialog1
         ' 
@@ -176,12 +176,22 @@ Partial Class Form1
         ' 
         opnFullFile.Title = "HTML-Flashcards WITH answers"
         ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        Label4.Location = New Point(12, 404)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(287, 28)
+        Label4.TabIndex = 8
+        Label4.Text = "Tip: Use Arrow Keys to navigate"
+        ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(341, 450)
-        Controls.Add(linkColorBox)
+        ClientSize = New Size(383, 447)
+        Controls.Add(Label4)
         Controls.Add(Label3)
         Controls.Add(btnCOOPPlayer)
         Controls.Add(btnSinglePlayer)
@@ -194,7 +204,6 @@ Partial Class Form1
         Margin = New Padding(3, 2, 3, 2)
         Name = "Form1"
         Text = "md2flashcards"
-        CType(linkColorBox, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -211,8 +220,8 @@ Partial Class Form1
     Friend WithEvents savFileDiag As SaveFileDialog
     Friend WithEvents btnRelMDAndAply As Button
     Friend WithEvents opnHTMLDialog As OpenFileDialog
-    Friend WithEvents linkColorBox As PictureBox
     Friend WithEvents ColorDialog1 As ColorDialog
     Friend WithEvents opnCoopFile As OpenFileDialog
     Friend WithEvents opnFullFile As OpenFileDialog
+    Friend WithEvents Label4 As Label
 End Class

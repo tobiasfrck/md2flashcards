@@ -79,6 +79,7 @@ Public Class COOPViewer
                 Debug.WriteLine("Escape")
                 Me.Close()
                 student?.Close()
+                teacher?.Close()
             End If
         End If
 
@@ -131,8 +132,12 @@ Public Class COOPViewer
         COOPViewer_KeyPress(sender, e)
     End Sub
 
-    Private Sub COOPViewer_SizeChanged(sender As Object, e As EventArgs) Handles Me.SizeChanged
+    Private Sub COOPViewer_SizeChanged(sender As Object, e As EventArgs) Handles MyBase.SizeChanged
         btnLeft.Location = New Point(0, Me.ClientSize.Height / 2 - btnLeft.Height / 2)
         btnRight.Location = New Point(Me.ClientSize.Width - btnRight.Width, Me.ClientSize.Height / 2 - btnRight.Height / 2)
+    End Sub
+
+    Private Sub WebView21_Click(sender As Object, e As EventArgs) Handles WebView21.Click
+
     End Sub
 End Class

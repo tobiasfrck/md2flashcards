@@ -73,7 +73,7 @@ Partial Class SingleViewer
         Controls.Add(btnLeft)
         Controls.Add(WebView21)
         Name = "SingleViewer"
-        Text = "SingleViewer"
+        Text = "Student Mode"
         CType(WebView21, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
