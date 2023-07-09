@@ -23,6 +23,8 @@ Partial Class SingleViewer
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         WebView21 = New Microsoft.Web.WebView2.WinForms.WebView2()
+        btnLeft = New Button()
+        btnRight = New Button()
         CType(WebView21, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -38,13 +40,38 @@ Partial Class SingleViewer
         WebView21.TabIndex = 0
         WebView21.ZoomFactor = 1R
         ' 
+        ' btnLeft
+        ' 
+        btnLeft.Anchor = AnchorStyles.Left
+        btnLeft.FlatStyle = FlatStyle.Flat
+        btnLeft.Location = New Point(0, 277)
+        btnLeft.Name = "btnLeft"
+        btnLeft.Size = New Size(37, 70)
+        btnLeft.TabIndex = 2
+        btnLeft.Text = "<"
+        btnLeft.UseVisualStyleBackColor = True
+        ' 
+        ' btnRight
+        ' 
+        btnRight.Anchor = AnchorStyles.Right
+        btnRight.BackColor = Color.Transparent
+        btnRight.BackgroundImageLayout = ImageLayout.None
+        btnRight.FlatStyle = FlatStyle.Flat
+        btnRight.Location = New Point(1225, 277)
+        btnRight.Name = "btnRight"
+        btnRight.Size = New Size(37, 70)
+        btnRight.TabIndex = 3
+        btnRight.Text = ">"
+        btnRight.UseVisualStyleBackColor = False
+        ' 
         ' SingleViewer
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1262, 673)
+        Controls.Add(btnRight)
+        Controls.Add(btnLeft)
         Controls.Add(WebView21)
-        FormBorderStyle = FormBorderStyle.SizableToolWindow
         Name = "SingleViewer"
         Text = "SingleViewer"
         CType(WebView21, ComponentModel.ISupportInitialize).EndInit()
@@ -52,4 +79,6 @@ Partial Class SingleViewer
     End Sub
 
     Friend WithEvents WebView21 As Microsoft.Web.WebView2.WinForms.WebView2
+    Friend WithEvents btnLeft As Button
+    Friend WithEvents btnRight As Button
 End Class

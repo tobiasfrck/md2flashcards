@@ -46,7 +46,7 @@ Partial Class COOPViewer
         btnLeft.FlatStyle = FlatStyle.Flat
         btnLeft.Location = New Point(-1, 197)
         btnLeft.Name = "btnLeft"
-        btnLeft.Size = New Size(24, 39)
+        btnLeft.Size = New Size(37, 70)
         btnLeft.TabIndex = 1
         btnLeft.Text = "<"
         btnLeft.UseVisualStyleBackColor = True
@@ -57,9 +57,9 @@ Partial Class COOPViewer
         btnRight.BackColor = Color.Transparent
         btnRight.BackgroundImageLayout = ImageLayout.None
         btnRight.FlatStyle = FlatStyle.Flat
-        btnRight.Location = New Point(835, 197)
+        btnRight.Location = New Point(822, 187)
         btnRight.Name = "btnRight"
-        btnRight.Size = New Size(24, 39)
+        btnRight.Size = New Size(37, 70)
         btnRight.TabIndex = 2
         btnRight.Text = ">"
         btnRight.UseVisualStyleBackColor = False

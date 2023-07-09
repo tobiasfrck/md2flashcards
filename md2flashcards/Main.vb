@@ -69,15 +69,7 @@ Public Class Form1
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles btnSinglePlayer.Click
-        If (saveFilePath Is Nothing) Then
-            opnHTMLDialog.ShowDialog()
-        Else
-            SingleViewer.WebView21.Source = New Uri(saveFilePath)
-            SingleViewer.source = opnHTMLDialog.FileName
-            SingleViewer.allowSourceChange = True
-            SingleViewer.Show()
-            SingleViewer.BringToFront()
-        End If
+        opnHTMLDialog.ShowDialog()
     End Sub
 
     Private Sub opnHTMLDialog_FileOk(sender As Object, e As CancelEventArgs) Handles opnHTMLDialog.FileOk
@@ -94,17 +86,25 @@ Public Class Form1
     End Sub
 
     Private Sub btnCOOPPlayer_Click(sender As Object, e As EventArgs) Handles btnCOOPPlayer.Click
+        MsgBox("Please select the html file with the flashcards WITH answers.", MsgBoxStyle.Information, "Select flashcards with answers.")
         opnFullFile.ShowDialog()
+        If Not saveFilePath Is Nothing AndAlso saveFilePath.Equals(opnFullFile.FileName) Then
+            MsgBox("Please select the html file with the flashcards WITHOUT answers.", MsgBoxStyle.Information, "Select flashcards without answers.")
+            opnFullFile.FileName = ""
+            opnCoopFile.ShowDialog()
+        End If
+        If Not onlyCardFilePath Is Nothing AndAlso onlyCardFilePath.Equals(opnCoopFile.FileName) Then
+            opnCoopFile.FileName = ""
+            StartCoopProcess()
+        End If
     End Sub
 
     Private Sub opnFullFile_FileOk(sender As Object, e As CancelEventArgs) Handles opnFullFile.FileOk
         saveFilePath = opnFullFile.FileName
-        opnCoopFile.ShowDialog()
     End Sub
 
     Private Sub opnCoopFile_FileOk(sender As Object, e As CancelEventArgs) Handles opnCoopFile.FileOk
         onlyCardFilePath = opnCoopFile.FileName
-        StartCoopProcess()
     End Sub
 
     Public Sub StartCoopProcess()

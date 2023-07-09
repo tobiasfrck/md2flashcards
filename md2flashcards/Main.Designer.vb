@@ -121,7 +121,7 @@ Partial Class Form1
         ' 
         btnCOOPPlayer.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         btnCOOPPlayer.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        btnCOOPPlayer.Location = New Point(10, 295)
+        btnCOOPPlayer.Location = New Point(12, 294)
         btnCOOPPlayer.Margin = New Padding(2)
         btnCOOPPlayer.Name = "btnCOOPPlayer"
         btnCOOPPlayer.Size = New Size(322, 28)
@@ -132,11 +132,13 @@ Partial Class Form1
         ' opnFileDiag
         ' 
         opnFileDiag.Filter = "Markdown-Files|*.md|All Files|*.*"
+        opnFileDiag.Title = "Open Markdown-Flashcards"
         ' 
         ' savFileDiag
         ' 
         savFileDiag.Filter = "HTML-Files|*.html|All Files|*.*"
         savFileDiag.RestoreDirectory = True
+        savFileDiag.Title = "Save HTML-Flashcards"
         ' 
         ' btnRelMDAndAply
         ' 
@@ -151,8 +153,8 @@ Partial Class Form1
         ' 
         ' opnHTMLDialog
         ' 
-        opnHTMLDialog.FileName = "OpenFileDialog1"
         opnHTMLDialog.Filter = "HTML-Files|*.html|All Files|*.*"
+        opnHTMLDialog.Title = "Open HTML-Flashcards with answers"
         ' 
         ' linkColorBox
         ' 
@@ -168,11 +170,11 @@ Partial Class Form1
         ' 
         ' opnCoopFile
         ' 
-        opnCoopFile.FileName = "OpenFileDialog1"
+        opnCoopFile.Title = "HTML-Flashcards WITHOUT answers"
         ' 
         ' opnFullFile
         ' 
-        opnFullFile.FileName = "OpenFileDialog1"
+        opnFullFile.Title = "HTML-Flashcards WITH answers"
         ' 
         ' Form1
         ' 

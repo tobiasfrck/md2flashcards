@@ -112,7 +112,7 @@ Public Class COOPViewer
         WebView21.ExecuteScriptAsync("nextSlide();")
     End Sub
 
-    Private Sub COOPViewer_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Me.KeyPress
+    Private Sub COOPViewer_KeyPress(sender As Object, e As KeyPressEventArgs) Handles MyBase.KeyPress
         If e.KeyChar = ChrW(Keys.Escape) Then
             Me.Close()
             student?.Close()
@@ -129,5 +129,10 @@ Public Class COOPViewer
 
     Private Sub btnRight_KeyPress(sender As Object, e As KeyPressEventArgs) Handles btnRight.KeyPress
         COOPViewer_KeyPress(sender, e)
+    End Sub
+
+    Private Sub COOPViewer_SizeChanged(sender As Object, e As EventArgs) Handles Me.SizeChanged
+        btnLeft.Location = New Point(0, Me.ClientSize.Height / 2 - btnLeft.Height / 2)
+        btnRight.Location = New Point(Me.ClientSize.Width - btnRight.Width, Me.ClientSize.Height / 2 - btnRight.Height / 2)
     End Sub
 End Class

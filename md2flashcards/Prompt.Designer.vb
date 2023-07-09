@@ -46,20 +46,22 @@ Partial Class Prompt
         ' 
         ' btnTeacher
         ' 
+        btnTeacher.Font = New Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point)
         btnTeacher.Location = New Point(3, 5)
         btnTeacher.Name = "btnTeacher"
         btnTeacher.Size = New Size(420, 146)
         btnTeacher.TabIndex = 0
-        btnTeacher.Text = "Prüfer"
+        btnTeacher.Text = "Teacher"
         btnTeacher.UseVisualStyleBackColor = True
         ' 
         ' btnStudent
         ' 
+        btnStudent.Font = New Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point)
         btnStudent.Location = New Point(3, 157)
         btnStudent.Name = "btnStudent"
         btnStudent.Size = New Size(420, 147)
         btnStudent.TabIndex = 1
-        btnStudent.Text = "Getesteter"
+        btnStudent.Text = "Student"
         btnStudent.UseVisualStyleBackColor = True
         ' 
         ' Prompt

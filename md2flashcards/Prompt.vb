@@ -20,7 +20,7 @@ Public Class Prompt
         Me.y = y
         Me.Location = New Point(x, y)
         InitializeComponent()
-        Me.Text = "Display " + id.ToString
+        Me.Text = "Select Role"
 
     End Sub
 
