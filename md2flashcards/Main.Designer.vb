@@ -29,15 +29,15 @@ Partial Class Form1
         btnAplySettings = New Button()
         Label3 = New Label()
         btnSinglePlayer = New Button()
-        Button5 = New Button()
+        btnCOOPPlayer = New Button()
         opnFileDiag = New OpenFileDialog()
         savFileDiag = New SaveFileDialog()
         btnRelMDAndAply = New Button()
         opnHTMLDialog = New OpenFileDialog()
         linkColorBox = New PictureBox()
         ColorDialog1 = New ColorDialog()
-        cmboxTester = New ComboBox()
-        cmboxTestee = New ComboBox()
+        opnCoopFile = New OpenFileDialog()
+        opnFullFile = New OpenFileDialog()
         CType(linkColorBox, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -117,17 +117,17 @@ Partial Class Form1
         btnSinglePlayer.Text = "Single Player - Learning"
         btnSinglePlayer.UseVisualStyleBackColor = True
         ' 
-        ' Button5
+        ' btnCOOPPlayer
         ' 
-        Button5.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
-        Button5.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        Button5.Location = New Point(10, 295)
-        Button5.Margin = New Padding(2)
-        Button5.Name = "Button5"
-        Button5.Size = New Size(322, 28)
-        Button5.TabIndex = 6
-        Button5.Text = "COOP - Learning"
-        Button5.UseVisualStyleBackColor = True
+        btnCOOPPlayer.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
+        btnCOOPPlayer.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        btnCOOPPlayer.Location = New Point(10, 295)
+        btnCOOPPlayer.Margin = New Padding(2)
+        btnCOOPPlayer.Name = "btnCOOPPlayer"
+        btnCOOPPlayer.Size = New Size(322, 28)
+        btnCOOPPlayer.TabIndex = 6
+        btnCOOPPlayer.Text = "COOP - Learning"
+        btnCOOPPlayer.UseVisualStyleBackColor = True
         ' 
         ' opnFileDiag
         ' 
@@ -166,32 +166,22 @@ Partial Class Form1
         ' 
         ColorDialog1.AnyColor = True
         ' 
-        ' cmboxTester
+        ' opnCoopFile
         ' 
-        cmboxTester.FormattingEnabled = True
-        cmboxTester.Location = New Point(11, 328)
-        cmboxTester.Name = "cmboxTester"
-        cmboxTester.Size = New Size(158, 28)
-        cmboxTester.TabIndex = 9
+        opnCoopFile.FileName = "OpenFileDialog1"
         ' 
-        ' cmboxTestee
+        ' opnFullFile
         ' 
-        cmboxTestee.FormattingEnabled = True
-        cmboxTestee.Location = New Point(10, 362)
-        cmboxTestee.Name = "cmboxTestee"
-        cmboxTestee.Size = New Size(158, 28)
-        cmboxTestee.TabIndex = 9
+        opnFullFile.FileName = "OpenFileDialog1"
         ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(341, 450)
-        Controls.Add(cmboxTestee)
-        Controls.Add(cmboxTester)
         Controls.Add(linkColorBox)
         Controls.Add(Label3)
-        Controls.Add(Button5)
+        Controls.Add(btnCOOPPlayer)
         Controls.Add(btnSinglePlayer)
         Controls.Add(btnRelMDAndAply)
         Controls.Add(btnAplySettings)
@@ -214,13 +204,13 @@ Partial Class Form1
     Friend WithEvents btnAplySettings As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents btnSinglePlayer As Button
-    Friend WithEvents Button5 As Button
+    Friend WithEvents btnCOOPPlayer As Button
     Friend WithEvents opnFileDiag As OpenFileDialog
     Friend WithEvents savFileDiag As SaveFileDialog
     Friend WithEvents btnRelMDAndAply As Button
     Friend WithEvents opnHTMLDialog As OpenFileDialog
     Friend WithEvents linkColorBox As PictureBox
     Friend WithEvents ColorDialog1 As ColorDialog
-    Friend WithEvents cmboxTester As ComboBox
-    Friend WithEvents cmboxTestee As ComboBox
+    Friend WithEvents opnCoopFile As OpenFileDialog
+    Friend WithEvents opnFullFile As OpenFileDialog
 End Class

@@ -29,7 +29,7 @@ Public Class Prompt
     End Sub
 
     Private Sub Prompt_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Me.BringToFront()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnTeacher.Click
@@ -62,7 +62,7 @@ Public Class Prompt
         Me.Close()
     End Sub
 
-    Private Sub Prompt_Closing(sender As Object, e As FormClosingEventArgs) Handles Me.Closing
+    Private Sub Prompt_Closing(sender As Object, e As FormClosingEventArgs) Handles MyBase.Closing
         If e.CloseReason = CloseReason.UserClosing AndAlso Not closedByProgram Then
             closedByUser = True
             callee.CoopCancelled()

@@ -71,6 +71,7 @@ Partial Class Prompt
         Name = "Prompt"
         StartPosition = FormStartPosition.Manual
         Text = "Prompt"
+        TopMost = True
         TableLayoutPanel1.ResumeLayout(False)
         ResumeLayout(False)
     End Sub
